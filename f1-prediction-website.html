@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Race Prediction</title>
+  <link rel="stylesheet" href="F1web.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="title">F1 Race Prediction</h1>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="card">
+      <div class="tab-container">
+        <div class="tab active" data-tab="setup">Race Setup</div>
+        <div class="tab" data-tab="drivers">Driver Grid</div>
+        <div class="tab" data-tab="results">Results</div>
+      </div>
+      
+      <div class="tab-content active" id="setup-tab">
+        <h2>Race Information</h2>
+        <div class="form-group">
+          <label for="circuit">Circuit</label>
+          <select id="circuit">
+            <option value="Silverstone Circuit">Silverstone Circuit</option>
+            <option value="Circuit de Monaco">Circuit de Monaco</option>
+            <option value="Autodromo Nazionale Monza">Monza</option>
+            <option value="Circuit de Spa-Francorchamps">Spa-Francorchamps</option>
+            <option value="Suzuka Circuit">Suzuka</option>
+            <option value="Circuit of the Americas">COTA</option>
+            <option value="Hungaroring">Hungaroring</option>
+            <option value="Bahrain International Circuit">Bahrain</option>
+            <option value="Circuit de Barcelona-Catalunya">Barcelona</option>
+            <option value="Red Bull Ring">Red Bull Ring</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="race-date">Race Date</label>
+          <input type="date" id="race-date" value="2025-04-06">
+        </div>
+        
+        <div class="action-buttons">
+          <div>
+            <button class="preset-btn" id="load-current-grid">Load Current Grid</button>
+            <button class="preset-btn" id="random-grid">Random Grid</button>
+          </div>
+          <button id="continue-to-drivers">Continue to Driver Grid</button>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="drivers-tab">
+        <h2>Driver Grid Setup</h2>
+        <p>Enter the starting position for each driver</p>
+        
+        <div id="driver-entries">
+          <!-- Driver entries will be populated here -->
+        </div>
+        
+        <div class="action-buttons">
+          <button id="back-to-setup">Back</button>
+          <button id="predict-race">Predict Race Results</button>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="results-tab">
+        <h2>Predicted Race Results</h2>
+        <div id="circuit-info"></div>
+        
+        <div id="results-container">
+          <!-- Results will be shown here -->
+        </div>
+        
+        <div class="loader" id="loader">
+          <div class="loader-spinner"></div>
+          <p>Calculating race predictions...</p>
+        </div>
+        
+        <div class="action-buttons">
+          <button id="back-to-drivers">Back to Grid</button>
+          <button id="new-prediction">New Prediction</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<script src="F1.js"></script>
+</body>
+</html>
